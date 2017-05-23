@@ -18,6 +18,8 @@ RUN apt-get update
 RUN apt-get -y dist-upgrade
 
 # START INSTALL
+## replace source with Aliyun repository
+COPY sources.list /etc/apt/
 ## install required packages
 RUN apt-get -y install gcc make build-essential tcl
 
