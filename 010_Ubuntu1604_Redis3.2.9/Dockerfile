@@ -13,13 +13,13 @@ ENV REDIS_INSTALL_FOLDER_NAME  redis-3.2.9
 ENV REDIS_USER_NAME            redis
 
 # prepare system package
+## replace source with Aliyun repository
+COPY sources.list /etc/apt/
 ## common system update
 RUN apt-get update
 RUN apt-get -y dist-upgrade
 
 # START INSTALL
-## replace source with Aliyun repository
-COPY sources.list /etc/apt/
 ## install required packages
 RUN apt-get -y install gcc make build-essential tcl
 
