@@ -1,8 +1,11 @@
 #!/bin/bash
 
 # download redis install package and verify md5
-wget http://download.redis.io/releases/redis-3.2.9.tar.gz
-echo "3d0a35985b4414c9376b6bcda0ef72ae *./redis-3.2.9.tar.gz" | md5sum -c
+if [ ! -e "./redis-3.2.9.tar.gz" ]
+then
+    wget http://download.redis.io/releases/redis-3.2.9.tar.gz
+    echo "3d0a35985b4414c9376b6bcda0ef72ae *./redis-3.2.9.tar.gz" | md5sum -c
+fi
 
 # IF YOU CAN NOT DOWNLOAD REDIS INSTALL FILE OR YOU BEHIND A FIREWALL,
 # PLEASE CONSIDER FOLLOWING SOLUTION
