@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: make.sh <config file name> <server IP>
+# Usage: make.sh <current user name> <config file name> <server IP>
 
 # download install package and verify md5
 if [ ! -e "./logstash-5.4.3.tar.gz" ]
@@ -17,9 +17,9 @@ fi
 cp ../090_Share/sources.aliyun.list ./sources.list
 
 # Update config info
-sed -i 's/HOST_IP/$2/g' $1
+sed -i 's/HOST_IP/$3/g' $2
 # rename config file
-cp ./$1 ./logstash.conf
+cp ./$2 ./logstash.conf
 
 # change property
 chown -R $1:$1 ../../
