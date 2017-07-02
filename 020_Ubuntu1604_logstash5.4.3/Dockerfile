@@ -8,8 +8,8 @@ MAINTAINER xin.he hexin0614@hotmail.com
 
 # declare environment variables
 ENV WORK_DIR                     /logstash_home
-ENV LOGSTASH_INSTALL_FILE_NAME    logstash-3.2.9.tar.gz
-ENV LOGSTASH_INSTALL_FOLDER_NAME  logstash-3.2.9
+ENV LOGSTASH_INSTALL_FILE_NAME    logstash-5.4.3.tar.gz
+ENV LOGSTASH_INSTALL_FOLDER_NAME  logstash-5.4.3
 ENV LOGSTASH_CONFIG_FILE_NAME     logstash.conf
 
 # prepare system package
