@@ -17,7 +17,10 @@ ENV LOGSTASH_CONFIG_FILE_NAME     logstash.conf
 COPY sources.list /etc/apt/
 ## common system update
 RUN apt-get update
+RUN apt-get check
+RUN apt-get -y autoremove
 RUN apt-get -y dist-upgrade
+RUN apt-get -y autoclean
 
 # START INSTALL
 ## install required packages
