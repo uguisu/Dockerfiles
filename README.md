@@ -1,8 +1,11 @@
 # Dockerfiles
 
+[![][license img]][license]
 
+## About
+For personal use only.
 
-### License
+## License
 
 Dockerfile is released under the [Apache 2.0 license](LICENSE).
 
@@ -19,3 +22,6 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+[license]:<http://www.apache.org/licenses/LICENSE-2.0>
+[license img]:https://img.shields.io/badge/license-Apache%202-blue.svg
