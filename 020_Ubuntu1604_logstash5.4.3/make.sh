@@ -17,7 +17,7 @@ fi
 cp ../090_Share/sources.aliyun.list ./sources.list
 
 # Update config info
-sed -i 's/HOST_IP/$3/g' $2
+sed -i 's/HOST_IP/'"$3"'/g' $2
 # rename config file
 cp ./$2 ./logstash.conf
 
