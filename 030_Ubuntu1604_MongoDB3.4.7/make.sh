@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: make.sh <current user name> <config file name> <server IP>
+# Usage: make.sh <current user name>
 
 # download install package and verify md5
 if [ ! -e "./mongodb-linux-x86_64-ubuntu1604-3.4.7.tgz" ]
@@ -14,7 +14,8 @@ fi
 # copy required file to working folder
 # cp ../090_Share/mongodb-linux-x86_64-ubuntu1604-3.4.7.tgz .
 
-cp ../090_Share/sources.aliyun.list ./sources.list
+# Change source
+# cp ../090_Share/sources.aliyun.list ./sources.list
 
 # change property
 chown -R $1:$1 ../../

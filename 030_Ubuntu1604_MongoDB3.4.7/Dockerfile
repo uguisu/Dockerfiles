@@ -10,10 +10,11 @@ MAINTAINER xin.he hexin0614@hotmail.com
 ENV WORK_DIR                     /mongodb_home
 ENV MONGODB_INSTALL_FILE_NAME    mongodb-linux-x86_64-ubuntu1604-3.4.7.tgz
 ENV MONGODB_INSTALL_FOLDER_NAME  mongodb-linux-x86_64-ubuntu1604-3.4.7
+ENV MONGODB_DATA_DIR             /data/db
 
 # prepare system package
 ## replace source with Aliyun repository
-COPY sources.list /etc/apt/
+# COPY sources.list /etc/apt/
 ## common system update
 RUN \
     apt-get update && \
@@ -24,6 +25,7 @@ RUN \
 
 ## create work folder
 RUN mkdir -p $WORK_DIR
+RUN mkdir -p $MONGODB_DATA_DIR
 
 # add mongodb package
 ADD $MONGODB_INSTALL_FILE_NAME $WORK_DIR/
@@ -39,11 +41,10 @@ RUN \
 #    mkdir -p /data/db
 
 # Define mountable directories.
-VOLUME ["/data/db"]
+VOLUME /data/db
 
 # define default command
-# CMD $WORK_DIR/$MONGODB_INSTALL_FOLDER_NAME/bin/mongodb -dbpath=/data/mongodb/db -logpath=/data/mongodb/log
-CMD $WORK_DIR/$MONGODB_INSTALL_FOLDER_NAME/bin/mongodb
+CMD $WORK_DIR/$MONGODB_INSTALL_FOLDER_NAME/bin/mongod
 
 # export port
 EXPOSE 27017
