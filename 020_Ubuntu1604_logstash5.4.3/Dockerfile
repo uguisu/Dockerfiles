@@ -39,7 +39,7 @@ WORKDIR $WORK_DIR/$LOGSTASH_INSTALL_FOLDER_NAME
 RUN touch ~/.bashrc
 RUN echo "alias ls='ls --color=auto'"                                  >> ~/.bashrc
 RUN echo "alias ll='ls -alF'"                                          >> ~/.bashrc
-RUN echo "export PATH=$WORK_DIR/$LOGSTASH_INSTALL_FOLDER_NAME/bin:/bin:$PATH"  >> ~/.bashrc
+RUN echo "export PATH=$WORK_DIR/$LOGSTASH_INSTALL_FOLDER_NAME/bin:/bin:\$PATH"  >> ~/.bashrc
 
 # define default command
 CMD $WORK_DIR/$LOGSTASH_INSTALL_FOLDER_NAME/bin/logstash -f $WORK_DIR/$LOGSTASH_CONFIG_FILE_NAME

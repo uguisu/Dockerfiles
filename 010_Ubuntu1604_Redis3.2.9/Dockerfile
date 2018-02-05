@@ -47,7 +47,7 @@ USER $REDIS_USER_NAME
 RUN touch ~/.bashrc
 RUN echo "alias ls='ls --color=auto'"                                  >> ~/.bashrc
 RUN echo "alias ll='ls -alF'"                                          >> ~/.bashrc
-RUN echo "export PATH=$WORK_DIR/$REDIS_INSTALL_FOLDER_NAME/src:/bin:$PATH"  >> ~/.bashrc
+RUN echo "export PATH=$WORK_DIR/$REDIS_INSTALL_FOLDER_NAME/src:/bin:\$PATH"  >> ~/.bashrc
 
 ## update Redis config
 ENV CONFIG_FILE $WORK_DIR/$REDIS_INSTALL_FOLDER_NAME/redis.conf

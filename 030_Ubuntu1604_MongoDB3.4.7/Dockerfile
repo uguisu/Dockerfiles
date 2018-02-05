@@ -37,7 +37,7 @@ RUN \
     touch ~/.bashrc   && \
     echo "alias ls='ls --color=auto'"                                  >> ~/.bashrc         && \
     echo "alias ll='ls -alF'"                                          >> ~/.bashrc         && \
-    echo "export PATH=$WORK_DIR/$MONGODB_INSTALL_FOLDER_NAME/bin:/bin:$PATH"  >> ~/.bashrc
+    echo "export PATH=$WORK_DIR/$MONGODB_INSTALL_FOLDER_NAME/bin:/bin:\$PATH"  >> ~/.bashrc
 #    mkdir -p /data/db
 
 # Define mountable directories.
